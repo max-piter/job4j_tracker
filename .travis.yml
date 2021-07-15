@@ -15,6 +15,6 @@ after_success:
 notifications:
   email:
     recipients:
-      - maxpiter76@gmail.com
+      - butcher_1996@mail.ru
     on_success: never # default: change
     on_failure: always # default: always
