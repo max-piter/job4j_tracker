@@ -27,8 +27,4 @@ public class TriangleTest {
         double rsl = triangle.area();
         Assert.assertEquals(expected, rsl, 0.01);
     }
-
-
-
-
 }

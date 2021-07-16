@@ -1,11 +1,11 @@
 package ru.job4j.oop;
 
 public class Error {
-    boolean active;
-    int status;
-    String massage;
+   private boolean active;
+   private int status;
+   private String massage;
 
-     public Error(){
+     public Error() {
      }
 
      public Error(boolean active, int status, String massage) {
@@ -14,7 +14,7 @@ public class Error {
          this.massage = massage;
      }
 
-     public void showInfoError(){
+     public void showInfoError() {
          System.out.println("Есть ошибка: " + active);
          System.out.println("Статус: " + status);
          System.out.println(massage);
