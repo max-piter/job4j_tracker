@@ -6,8 +6,8 @@ public class Error {
     String massage;
 
      public Error(){
-
      }
+
      public Error(boolean active, int status, String massage) {
          this.active = active;
          this.status = status;
