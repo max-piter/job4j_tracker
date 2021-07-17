@@ -14,8 +14,4 @@ public class Engeneer extends Profession {
     public int getWorkExperience() {
         return workExperience;
     }
-
-
-
-
 }
