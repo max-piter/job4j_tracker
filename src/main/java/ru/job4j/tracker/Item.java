@@ -24,9 +24,9 @@ import java.time.format.DateTimeFormatter;
      @Override
      public String toString() {
          return "Item{"
-                + "created=" + created.format(FORMATTER)
-                + ", id=" + id
-                + ", name='" + name + '\''
+                 + "id=" + id
+                 + ", name='" + name + '\''
+                 +  ", created=" + created.format(FORMATTER)
                  + '}';
      }
 
