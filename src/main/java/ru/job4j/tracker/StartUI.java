@@ -4,8 +4,10 @@ import java.time.format.DateTimeFormatter;
 
 public class StartUI {
     public static void main(String[] args) {
-        Item it = new Item();
+        Item item = new Item("Max", 3);
+        System.out.println(item);
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
-        System.out.println(it.getCreated().format(formatter));
+        System.out.println(item.getCreated().format(formatter));
     }
 }

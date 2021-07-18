@@ -3,11 +3,13 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
  public class Item {
-    private int id;
-    private String name;
-    private LocalDateTime created = LocalDateTime.now();
+     private static final DateTimeFormatter FORMATTER
+             = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
+     private LocalDateTime created = LocalDateTime.now();
+     private int id;
+     private String name;
 
-    public Item() {
+     public Item() {
     }
 
     public Item(String name) {
@@ -18,6 +20,15 @@ import java.time.format.DateTimeFormatter;
         this.name = name;
         this.id = id;
     }
+
+     @Override
+     public String toString() {
+         return "Item{"
+                + "created=" + created.format(FORMATTER)
+                + ", id=" + id
+                + ", name='" + name + '\''
+                 + '}';
+     }
 
      public LocalDateTime getCreated() {
          return created;
