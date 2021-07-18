@@ -11,7 +11,7 @@ public class ReportUsage {
         System.out.println(textHtml);
 
         JSONReport json = new JSONReport();
-        String js = json.generate("name", "body");
+        String js = json.generate("\"name\" :", "\"body\" :");
         System.out.println(js);
     }
 }
