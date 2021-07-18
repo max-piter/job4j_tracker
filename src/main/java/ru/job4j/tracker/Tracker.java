@@ -49,20 +49,10 @@ public class Tracker {
         int index = indexOf(id);
         boolean rsl = false;
         if (index != -1) {
-            items[index].setName(item.getName());
+            item.setId(id);
+            items[index] = item;
             rsl = true;
         }
         return rsl;
     }
-
-    public static void main(String[] args) {
-        Tracker tracker = new Tracker();
-        Item bug = new Item();
-        bug.setName("Bug");
-        tracker.add(bug);
-        int id = bug.getId();
-        Item bugWithDesc = new Item();
-        bugWithDesc.setName("Bug with description");
-        tracker.replace(id, bugWithDesc);
-    }
-    }
+}
