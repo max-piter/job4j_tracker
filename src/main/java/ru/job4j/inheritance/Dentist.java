@@ -1,23 +1,14 @@
 package ru.job4j.inheritance;
 
-public class Dentist extends Doctor {
-    private int experienceInDentistry;
-    private String hospital;
+    public class Dentist extends Doctor {
+
     private boolean kidsSert;
 
-    public Dentist(int experienceInDentistry, String hospital, boolean kidsSert) {
-        this.experienceInDentistry = experienceInDentistry;
-        this.hospital = hospital;
-        this.kidsSert = kidsSert;
-    }
-
-    public int getExperienceInDentistry() {
-        return experienceInDentistry;
-    }
-
-    public String getHospital() {
-        return hospital;
-    }
+        public Dentist(String name, String surname, String education, int birthday,
+                       int workExperience, boolean kidsSert) {
+            super(name, surname, education, birthday, workExperience);
+            this.kidsSert = kidsSert;
+        }
 
     public boolean isKidsSert() {
         return kidsSert;

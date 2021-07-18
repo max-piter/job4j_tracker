@@ -2,10 +2,11 @@ package ru.job4j.inheritance;
 
 public class Builder extends Engeneer {
     private String program;
-    private String sphereOfBuilding;
 
-    public String getSphereOfBuilding() {
-        return sphereOfBuilding;
+    public Builder(String name, String surname, String education,
+                   int birthday, int workExperience, String program) {
+        super(name, surname, education, birthday, workExperience);
+        this.program = program;
     }
 
     public String getProgram() {
