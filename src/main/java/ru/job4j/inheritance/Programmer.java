@@ -12,18 +12,7 @@ public class Programmer extends Engeneer {
         return technologies;
     }
 
-    public static boolean findLanguageForJob(String language) {
-        boolean job = false;
-        switch (language) {
-            case ("java"): job = true;
-            break;
-            case ("python"): job = false;
-            break;
-            case ("C++"): job = true;
-            break;
-            default:
-                System.out.println("You can't find any job");
-        }
-        return job;
+    public static boolean canWork(String language) {
+         return false;
     }
 }

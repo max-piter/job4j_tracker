@@ -1,11 +1,11 @@
 package ru.job4j.inheritance;
 
 public class Surgeon extends Doctor {
-    private int experienceInSurgery;
+    private String sphereOfSurgery;
     private String hospital;
 
-    public int getExperienceInSurgery() {
-        return experienceInSurgery;
+    public String getSphereOfSurgery() {
+        return sphereOfSurgery;
     }
 
     public String getHospital() {
@@ -13,7 +13,7 @@ public class Surgeon extends Doctor {
     }
 
     public static boolean canDoComplexOperation(int experienceInSurgery, boolean canDo) {
-        return experienceInSurgery > 3;
+        return false;
     }
 }
 

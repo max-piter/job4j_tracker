@@ -17,8 +17,4 @@ public class Pacient {
          this.diagnosis = diagnosis;
          return diagnosis;
     }
-
-    public static void main(String[] args) {
-        Pacient pacient = new Pacient(46, "knee", "Victor", "broken");
-    }
 }

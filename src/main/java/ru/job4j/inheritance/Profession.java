@@ -2,7 +2,7 @@ package ru.job4j.inheritance;
 
 public class Profession {
     private String name;
-    private int id;
+    private String surname;
     private String education;
     private  int birthday;
 
@@ -18,7 +18,7 @@ public class Profession {
         return birthday;
     }
 
-    public int getId() {
-        return id;
+    public String getSurname() {
+        return surname;
     }
 }

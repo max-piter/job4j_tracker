@@ -13,17 +13,15 @@ public class Builder extends Engeneer {
     }
 
     public static int infoMaterial(String material) {
-        int timeToBild = 0;
-        switch (material) {
-            case ("brick") : timeToBild = 2;
-            break;
-            case ("wood") : timeToBild = 3;
-            break;
-            case ("block") : timeToBild = 1;
-            default:
-                System.out.println("Unknown material");
-        }
-        return timeToBild;
+        return 0;
+    }
+
+    public void theListofBuildings() {
+
+    }
+
+    public boolean canWorkWithAutoCAD(String program) {
+        return false;
     }
 
 }

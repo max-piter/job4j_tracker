@@ -6,9 +6,4 @@ public class Diagnosis {
     public  String getDesease() {
         return desease;
     }
-
-    public static void main(String[] args) {
-        Diagnosis d = new Diagnosis();
-    }
-
 }

@@ -19,7 +19,15 @@ public class Dentist extends Doctor {
         return hospital;
     }
 
-    public static boolean canWorkWithKids(boolean kidsSert) {
-        return kidsSert ? true : false;
+    public boolean isKidsSert() {
+        return kidsSert;
+    }
+
+    public void priceList() {
+
+    }
+
+    public int price(Diagnosis diagnosis, Pacient pacient) {
+        return 0;
     }
 }

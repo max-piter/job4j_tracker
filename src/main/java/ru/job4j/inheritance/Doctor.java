@@ -15,9 +15,4 @@ public class Doctor extends Profession {
     public Diagnosis heal(Pacient pacient) {
         return null;
     }
-
-    public static void main(String[] args) {
-        Doctor g = new Doctor();
-
-    }
 }
