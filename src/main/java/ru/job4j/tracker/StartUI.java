@@ -10,8 +10,10 @@ public class StartUI {
             showMenu();
             System.out.print("Select: ");
             int select = Integer.parseInt(scanner.nextLine());
-            if (select != 6) {
+            if (select != 6 && select >= 0 && select <= 6) {
                 System.out.println("Пользователь выбрал: " + select);
+            } else if (select < 0 || select > 6) {
+                System.out.println("Неверный номер: " + select + " попробуйте ещё раз");
             } else {
                 run = false;
             }
