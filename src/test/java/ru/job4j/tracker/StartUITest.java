@@ -8,19 +8,6 @@ import static org.junit.Assert.assertThat;
 
 public class StartUITest extends TestCase {
 
-    public void testReplaceItem() {
-        Tracker tracker = new Tracker();
-        Item item = new Item("new item");
-        tracker.add(item);
-        String[] answers = {
-                String.valueOf(item.getId()), /* id сохраненной заявки в объект tracker. */
-                "replaced item"
-        };
-        StartUI.replaceItem(new StubInput(answers), tracker);
-        Item replaced = tracker.findById(item.getId());
-        assertThat(replaced.getName(), is("replaced item"));
-    }
-
     public void testCreateItem() {
         String[] answers = {"Fix PC"};
         Input input = new StubInput(answers);
@@ -30,12 +17,6 @@ public class StartUITest extends TestCase {
         Item expected = new Item("Fix PC");
         assertThat(created.getName(), is(expected.getName()));
 
-    }
-
-    public void testShowAllItems() {
-    }
-
-    public void testEditItem() {
     }
 
     public void testDeleteItem() {
@@ -51,17 +32,5 @@ public class StartUITest extends TestCase {
         Item expected = null;
         assertEquals(deleted, expected);
 
-    }
-
-    public void testFindItemByID() {
-    }
-
-    public void testFindItemsByName() {
-    }
-
-    public void testInit() {
-    }
-
-    public void testMain() {
     }
 }

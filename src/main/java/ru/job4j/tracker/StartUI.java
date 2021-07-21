@@ -2,15 +2,6 @@ package ru.job4j.tracker;
 
 public class StartUI {
 
-    public static void replaceItem(Input input, Tracker tracker) {
-        System.out.println(" === Update item ====");
-        int id = input.askInt("Enter id:");
-        String name = input.askStr("Enter a new name of item: ");
-        Item item = new Item(name);
-        item.setId(id);
-        tracker.replace(id, item);
-    }
-
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
         String name = input.askStr("Enter name: ");
@@ -117,7 +108,6 @@ public class StartUI {
         Input input = new ConsoleInput();
     Tracker tracker = new Tracker();
     new StartUI().init(input, tracker);
-    new StartUI().replaceItem(input, tracker);
     }
 
 }
