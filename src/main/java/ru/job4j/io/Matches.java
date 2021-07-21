@@ -1,4 +1,8 @@
 package ru.job4j.io;
+import ru.job4j.tracker.Input;
+import ru.job4j.tracker.Item;
+import ru.job4j.tracker.Tracker;
+
 import java.util.Scanner;
 
 public class Matches {
@@ -27,5 +31,4 @@ public class Matches {
             System.out.println("Выиграл второй игрок");
         }
     }
-
 }
