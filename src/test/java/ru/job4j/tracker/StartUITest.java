@@ -1,17 +1,14 @@
 package ru.job4j.tracker;
 
 import junit.framework.TestCase;
-import org.junit.Test;
-
-import java.util.Scanner;
+import org.hamcrest.Matcher;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class StartUITest extends TestCase {
 
-    @Test
-    public void whentestReplaceItem() {
+    public void testReplaceItem() {
         Tracker tracker = new Tracker();
         Item item = new Item("new item");
         tracker.add(item);
@@ -24,7 +21,6 @@ public class StartUITest extends TestCase {
         assertThat(replaced.getName(), is("replaced item"));
     }
 
-     @Test
     public void testCreateItem() {
         String[] answers = {"Fix PC"};
         Input input = new StubInput(answers);
@@ -33,6 +29,7 @@ public class StartUITest extends TestCase {
         Item created = tracker.findAll()[0];
         Item expected = new Item("Fix PC");
         assertThat(created.getName(), is(expected.getName()));
+
     }
 
     public void testShowAllItems() {
@@ -41,9 +38,9 @@ public class StartUITest extends TestCase {
     public void testEditItem() {
     }
 
-    public void whenDeleteItem() {
+    public void testDeleteItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("new item");
+        Item item = new Item("delete item");
         tracker.add(item);
         String[] answers = {
                 String.valueOf(item.getId()), /* id сохраненной заявки в объект tracker. */
@@ -51,7 +48,8 @@ public class StartUITest extends TestCase {
         };
         StartUI.deleteItem(new StubInput(answers), tracker);
         Item deleted = tracker.findById(item.getId());
-        assertThat(deleted.getName(), is("delete"));
+        Item expected = null;
+        assertEquals(deleted, expected);
 
     }
 
@@ -62,5 +60,8 @@ public class StartUITest extends TestCase {
     }
 
     public void testInit() {
+    }
+
+    public void testMain() {
     }
 }
