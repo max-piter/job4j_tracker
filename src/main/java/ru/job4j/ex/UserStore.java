@@ -8,8 +8,9 @@ public class UserStore {
             if (users[i].getUsername().equals(login)) {
                 user = users[i];
                 break;
-            } else  {
-                throw new UserInvalidException("User not found");
+            }
+            if (user == null) {
+                    throw new UserInvalidException("User not found");
             }
         }
         return user;
@@ -29,7 +30,7 @@ public class UserStore {
                 new User("Petr Arsentev", true)
         };
 
-            User user = findUser(users, "Pet Arsentev");
+            User user = findUser(users, "Petr Arsentev");
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
