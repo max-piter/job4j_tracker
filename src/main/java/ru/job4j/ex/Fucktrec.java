@@ -6,13 +6,10 @@ public class Fucktrec {
         if (n < 0) {
             throw new IllegalArgumentException("Argument must be greater than or equals to zero");
         }
-        int rsl;
         if (n == 0 || n == 1) {
-            rsl = 1;
-        } else {
-            rsl = calc(n - 1) * n;
+            return 1;
         }
-        return  rsl;
+        return calc(n - 1) * n;
     }
 
     public static void main(String[] args) {
