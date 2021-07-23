@@ -93,7 +93,7 @@ public class StartUITest {
                 new ExitAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat((out.toString()), is("Menu." + sep  + "0. Show all items"
+        assertThat(out.toString(), is("Menu." + sep  + "0. Show all items"
                 + sep + "1. Exit" + sep + "===Show all items===" + sep
                 + item + sep  + "Menu." + sep
                 + "0. Show all items" + sep
@@ -116,9 +116,10 @@ public class StartUITest {
                 new ExitAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat((out.toString()), is("Menu." + sep
+        assertThat(out.toString(), is("Menu." + sep
                 + "0. Find items by name" + sep
-                + "1. Exit" + sep
+                + "1. Exit" + sep + "=== Find items by name ===" + sep
+                + item + sep
                 + "Menu." + sep
                 + "0. Find items by name" + sep
                 + "1. Exit" + sep));
@@ -140,7 +141,7 @@ public class StartUITest {
                 new ExitAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat((out.toString()), is("Menu." + sep
+        assertThat(out.toString(), is("Menu." + sep
                 + "0. Find item by id" + sep
                 + "1. Exit" + sep
                 + "=== Find item by id ====" + sep
