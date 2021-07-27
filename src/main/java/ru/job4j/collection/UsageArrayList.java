@@ -11,7 +11,6 @@ public class UsageArrayList {
         for (Object name: names) {
             System.out.println(name);
         }
-        
     }
 }
 
