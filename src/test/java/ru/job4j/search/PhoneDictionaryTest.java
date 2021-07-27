@@ -28,4 +28,17 @@ public class PhoneDictionaryTest {
         assertThat(persons.get(2).getSurname(), is("Petr"));
 
     }
+
+    @Test
+    public void whenFindNoName() {
+        PhoneDictionary test = new PhoneDictionary();
+        test.add(
+                new Person("Petr", "Arsentev", "534872", "Bryansk")
+        );
+        test.add(
+                new Person("Max", "Petr", "345", "Moscow")
+        );
+        ArrayList<Person> persons = test.find("Pier");
+        assertThat(persons.size(), is(0));
+    }
 }
