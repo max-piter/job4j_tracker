@@ -42,18 +42,18 @@ public class AddElementTest {
         assertThat(result, is(false));
     }
 
-    @Before
-    public void setUp() {
-        list.add("one");
-        list.add("two");
-        list.add("three");
-        list.add("four");
-        list.add("five");
-        list.add("six");
-        list.add("seven");
-        list.add("eight");
-        list.add("nine");
-    }
+//    @Before
+//    public void setUp() {
+//        list.add("one");
+//        list.add("two");
+//        list.add("three");
+//        list.add("four");
+//        list.add("five");
+//        list.add("six");
+//        list.add("seven");
+//        list.add("eight");
+//        list.add("nine");
+//    }
 
     @Test
     public void changePosition() {
@@ -99,4 +99,51 @@ public class AddElementTest {
         int result = AddElement.containsElement(left, right, check);
         assertThat(result, is(1));
     }
+
+    @Before
+    public void setUp() {
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        list.add("four");
+        list.add("five");
+        list.add("six");
+        list.add("seven");
+        list.add("eight");
+        list.add("three");
+        list.add("ten");
+    }
+
+    @Test
+    public void getElementsBetweenIndexes() {
+        List<String> result = AddElement.getElementsBetweenIndexes(list, "three");
+        List<String> expected = List.of("three", "four", "five", "six", "seven", "eight");
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getElementsBetweenIndexesEmptyList() {
+        List<String> result = AddElement.getElementsBetweenIndexes(list, "five");
+        List<String> expected = List.of();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void when() {
+        List<String> list = new ArrayList<>();
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        list.add("four");
+        list.add("five");
+        list.add("six");
+        list.add("seven");
+        list.add("eight");
+        list.add("nine");
+        list.add("ten");
+        List<String> expected = List.of("three", "seven", "eight");
+        List<String> result = AddElement.sortList(list);
+        assertThat(result, is(expected));
+    }
+
 }

@@ -52,7 +52,39 @@ public class AddElement {
         return left;
     }
 
+    public static List<String> getElementsBetweenIndexes(List<String> list, String el) {
+        if (!list.contains(el)) {
+            list.removeAll(list);
+        }
+        if (list.indexOf(el) == list.lastIndexOf(el)) {
+            list.removeAll(list);
+        }
+        if (list.indexOf(el) != list.lastIndexOf(el)) {
+            int a = list.indexOf(el);
+            int b = list.lastIndexOf(el);
+           list =  list.subList(a, b);
+        }
+        return list;
+    }
+
+    public static List<String> sortList(List<String> list) {
+        list.removeIf(n -> (n.length() < 5));
+        return list;
+    }
+
     public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        list.add("four");
+        list.add("five");
+        list.add("six");
+        list.add("seven");
+        list.add("eight");
+        list.add("three");
+        list.add("ten");
+        AddElement.getElementsBetweenIndexes(list, "three");
     }
 }
 
