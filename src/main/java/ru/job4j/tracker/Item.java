@@ -1,11 +1,9 @@
 package ru.job4j.tracker;
-import ru.job4j.collection.Job;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Comparator;
 
-public class Item implements Comparable<Item> {
+public class Item {
 
      private static final DateTimeFormatter FORMATTER
              = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
@@ -24,15 +22,6 @@ public class Item implements Comparable<Item> {
         this.name = name;
         this.id = id;
     }
-
-    public int compareToMinus(Item another) {
-         return Integer.compare(another.getId(), getId());
-    }
-
-     @Override
-     public int compareTo(Item another) {
-        return Integer.compare(getId(), another.getId());
-     }
 
      @Override
      public String toString() {
