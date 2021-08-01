@@ -5,8 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class SortByIdAscendTest  {
 
@@ -18,6 +17,14 @@ public class SortByIdAscendTest  {
                 new Item("Kir", 5)
         );
         Collections.sort(items, new SortByIdAscend());
-        assertEquals(4, items.get(0).getId());
+        List<Item> expected = Arrays.asList(
+                new Item("Nom", 4),
+                new Item("Kir", 5),
+                new Item("Max", 134)
+        );
+       assertEquals(expected.get(0).getId(), items.get(0).getId());
+       assertEquals(expected.get(1).getId(), items.get(1).getId());
+       assertEquals(expected.get(2).getId(), items.get(2).getId());
+
     }
 }

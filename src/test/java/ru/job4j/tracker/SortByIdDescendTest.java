@@ -18,6 +18,13 @@ public class SortByIdDescendTest {
                 new Item("Kir", 5)
         );
         Collections.sort(items, new SortByIdDescend());
-        assertEquals(134, items.get(0).getId());
+        List<Item> expected = Arrays.asList(
+                new Item("Max", 134),
+                new Item("Kir", 5),
+                new Item("Nom", 4)
+        );
+        assertEquals(expected.get(0).getId(), items.get(0).getId());
+        assertEquals(expected.get(1).getId(), items.get(1).getId());
+        assertEquals(expected.get(2).getId(), items.get(2).getId());
     }
 }
