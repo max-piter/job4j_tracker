@@ -25,9 +25,13 @@ public class Item implements Comparable<Item> {
         this.id = id;
     }
 
+    public int compareToMinus(Item another) {
+         return Integer.compare(another.getId(), getId());
+    }
+
      @Override
      public int compareTo(Item another) {
-         return Integer.compare(getId(), another.getId());
+        return Integer.compare(getId(), another.getId());
      }
 
      @Override
