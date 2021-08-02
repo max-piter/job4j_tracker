@@ -22,9 +22,7 @@ public class SortByIdAscendTest  {
                 new Item("Kir", 5),
                 new Item("Max", 134)
         );
-       assertEquals(expected.get(0).getId(), items.get(0).getId());
-       assertEquals(expected.get(1).getId(), items.get(1).getId());
-       assertEquals(expected.get(2).getId(), items.get(2).getId());
+        assertEquals(expected, items);
 
     }
 }
