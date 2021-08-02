@@ -1,6 +1,5 @@
 package ru.job4j.collection;
 
-import java.lang.reflect.Array;
 import java.util.Comparator;
 
 public class StringCompare implements Comparator<String> {
