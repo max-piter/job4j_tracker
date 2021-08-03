@@ -1,8 +1,18 @@
 package ru.job4j.bank;
 
 import java.util.Objects;
+/**
+ * класс являетсся моделью данных среднестатистического клиента банка
+ * @author Unknown
+ * @version 1.0
+ */
 
 public class User {
+
+    /**
+     * в переменных  типа String хранятся
+     * паспортные данные и ФИО
+     */
     private String passport;
     private String username;
 
