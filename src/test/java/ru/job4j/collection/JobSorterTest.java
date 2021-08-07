@@ -13,8 +13,8 @@ public class JobSorterTest {
         Comparator<Job> cmpNamePriority = new JobDescByName()
                 .thenComparing(new JobDescByPriority());
         int rsl = cmpNamePriority.compare(
-                new Job("Fill", 0),
-                new Job("Fill", 1)
+                new Job("Fill", 0, 0),
+                new Job("Fill", 1, 1)
         );
         assertThat(rsl, greaterThan(0));
     }
@@ -24,8 +24,8 @@ public class JobSorterTest {
         Comparator<Job> cmpNamePriority = new JobDescByName()
                 .thenComparing(new JobDescByPriority());
         int rsl = cmpNamePriority.compare(
-                new Job("Impl task", 0),
-                new Job("Fix bug", 1)
+                new Job("Impl task", 0, 0),
+                new Job("Fix bug", 1, 1)
         );
         assertThat(rsl, lessThan(0));
     }
@@ -35,8 +35,8 @@ public class JobSorterTest {
         Comparator<Job> combAsc = new JobAcsendName()
                 .thenComparing(new JobAcsendPriotity());
         int rsl = combAsc.compare(
-                new Job("Impl task", 0),
-                new Job("Fix bug", 1)
+                new Job("Impl task", 0, 0),
+                new Job("Fix bug", 1, 1)
         );
         assertThat(rsl, greaterThan(0));
     }
@@ -46,8 +46,8 @@ public class JobSorterTest {
         Comparator<Job> combAsc = new JobAcsendName()
                 .thenComparing(new JobAcsendPriotity());
         int rsl = combAsc.compare(
-                new Job("Fill", 0),
-                new Job("Fill", 1)
+                new Job("Fill", 0, 0),
+                new Job("Fill", 1, 1)
         );
         assertThat(rsl, lessThan(0));
     }

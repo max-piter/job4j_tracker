@@ -11,8 +11,8 @@ public class JobDescByNameTest {
     public void testDescByNameCompare() {
         Comparator<Job> descName = new JobDescByName();
         int rsl = descName.compare(
-                new Job("Max", 1),
-                new Job("Norm", 2)
+                new Job("Max", 1, 12),
+                new Job("Norm", 2, 13)
         );
         assertThat(rsl, greaterThan(0));
     }

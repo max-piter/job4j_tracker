@@ -3,10 +3,12 @@ package ru.job4j.collection;
 public class Job implements Comparable<Job> {
     private String name;
     private int priority;
+    private  int date;
 
-    public Job(String name, int priority) {
+    public Job(String name, int priority, int date) {
         this.name = name;
         this.priority = priority;
+        this.date = date;
     }
 
     public String getName() {
@@ -15,6 +17,10 @@ public class Job implements Comparable<Job> {
 
     public int getPriority() {
         return priority;
+    }
+
+    public int getDate() {
+        return date;
     }
 
     @Override
@@ -27,6 +33,6 @@ public class Job implements Comparable<Job> {
 
     @Override
     public int compareTo(Job another) {
-        return Integer.compare(priority, another.priority);
+        return this.priority - another.priority;
     }
 }

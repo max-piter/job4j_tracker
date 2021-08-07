@@ -12,8 +12,8 @@ public class JobAcsendNameTest {
     public void testJobAcsendByNameCompare() {
         Comparator<Job> acsendName = new JobAcsendName();
         int rsl = acsendName.compare(
-                new Job("Max", 1),
-                new Job("Norm", 2)
+                new Job("Max", 1, 1),
+                new Job("Norm", 2, 2)
         );
         assertThat(rsl, lessThan(0));
     }

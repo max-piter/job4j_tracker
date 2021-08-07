@@ -11,8 +11,8 @@ public class JobDescByPriorityTest {
     public void testDescByPriorityCompare() {
         Comparator<Job> descPrior = new JobDescByPriority();
         int rsl = descPrior.compare(
-                new Job("Max", 1),
-                new Job("Norm", 2)
+                new Job("Max", 1, 1),
+                new Job("Norm", 2, 2)
         );
         assertThat(rsl, greaterThan(0));
     }

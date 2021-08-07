@@ -12,8 +12,8 @@ public class JobAcsendPriotityTest {
     public void testJobAcsendPriotityCompare() {
         Comparator<Job> acsendPriotity = new JobAcsendPriotity();
         int rsl = acsendPriotity.compare(
-                new Job("Max", 1),
-                new Job("Norm", 2)
+                new Job("Max", 1, 1),
+                new Job("Norm", 2, 2)
         );
         assertThat(rsl, lessThan(0));
     }
