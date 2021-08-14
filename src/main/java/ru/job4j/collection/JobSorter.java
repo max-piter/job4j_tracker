@@ -25,5 +25,6 @@ public class JobSorter {
 //        Comparator<Job> combAsc = new JobAcsendName()
 //                .thenComparing(new JobAcsendPriotity());
 //        Collections.sort(jobs, combAsc);
+
     }
 }
