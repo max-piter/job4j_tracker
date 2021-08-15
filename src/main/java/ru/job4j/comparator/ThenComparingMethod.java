@@ -49,7 +49,8 @@ public class ThenComparingMethod {
     }
 
     public static Comparator<User> thenComparing() {
-        return (Comparator<User>) Comparator.naturalOrder().thenComparing(Comparator.reverseOrder());
+        return (Comparator<User>) Comparator.naturalOrder()
+                .thenComparing(Comparator.reverseOrder());
     }
 
     public static Comparator<User> ascByName() {
