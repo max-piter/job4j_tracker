@@ -3,6 +3,8 @@ package ru.job4j.lambda;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class AttachmentSort {
     public static void main(String[] args) {
@@ -28,5 +30,12 @@ public class AttachmentSort {
         };
         attachments.sort(comparatorName);
         System.out.println(attachments);
+
+        Supplier<String> sup = () -> "New String For Interface";
+        System.out.println(sup.get());
+
+        Function<String, Integer> func = s -> Integer.valueOf(s.charAt(2));
+        System.out.println("Третий символ в строке: " + func.apply("first"));
+        System.out.println("Третий символ в строке: " + func.apply("second"));
     }
 }
