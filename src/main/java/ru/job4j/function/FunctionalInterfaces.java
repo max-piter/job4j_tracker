@@ -1,5 +1,7 @@
 package ru.job4j.function;
 
+import ru.job4j.lambda.Attachment;
+
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.function.*;
@@ -33,5 +35,18 @@ public class FunctionalInterfaces {
             con.accept(func.apply(s));
         }
 
+        List<Integer> i = new ArrayList<>(100);
+        i.add(1);
+        i.add(2);
+        System.out.println(i);
+
+        Comparator<String> cmpText = (left, right) -> left.compareTo(right);
+        Comparator<String> cmpDescSize = (left, right) ->
+                Integer.compare(right.length(), left.length());
+
+        Comparator<Attachment> comparator = (left, right) -> {
+            System.out.println("compare - " + left.getSize() + " : " + right.getSize());
+            return left.getSize() - right.getSize();
+        };
     }
 }
