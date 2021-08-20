@@ -8,8 +8,8 @@ import java.util.function.*;
 
 public class FunctionalInterfaces {
     public static void main(String[] args) {
-        Map<Integer, String> map = new HashMap<>();
-        BiConsumer<Integer, String> biCon = (i, s1) -> map.put(i, s1);
+       Map<Integer, String> map = new HashMap<>();
+        BiConsumer<Integer, String> biCon = map :: put;
         biCon.accept(1, "one");
         biCon.accept(2, "two");
         biCon.accept(3, "three");
@@ -29,8 +29,8 @@ public class FunctionalInterfaces {
         Supplier<List<String>> sup = () -> new ArrayList<>(map.values());
         List<String> strings = sup.get();
 
-        Consumer<String> con = (s) -> System.out.println(s);
-        Function<String, String> func = s -> s.toUpperCase();
+        Consumer<String> con = System.out :: println;
+        Function<String, String> func = String  :: toUpperCase;
         for (String s : strings) {
             con.accept(func.apply(s));
         }
@@ -40,7 +40,7 @@ public class FunctionalInterfaces {
         i.add(2);
         System.out.println(i);
 
-        Comparator<String> cmpText = (left, right) -> left.compareTo(right);
+        Comparator<String> cmpText = String :: compareTo;
         Comparator<String> cmpDescSize = (left, right) ->
                 Integer.compare(right.length(), left.length());
 
