@@ -4,10 +4,12 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class SchoolTest {
     @Test
@@ -63,5 +65,44 @@ public class SchoolTest {
         expected.add(new Student(30, "Surname3"));
         expected.add(new Student(40, "Surname4"));
         assertThat(rsl, is(expected));
+    }
+
+    @Test
+    public void whenListToMap() {
+        List<Student> students = List.of(
+                new Student(10, "Surname1"),
+                new Student(30, "Surname3"),
+                new Student(40, "Surname4"),
+                new Student(60, "Surname2")
+        );
+        School school = new School();
+        Map<String, Student> expected =  Map.of(
+                "Surname1", new Student(10, "Surname1"),
+                "Surname3", new Student(30, "Surname3"),
+                "Surname4", new Student(40, "Surname4"),
+                "Surname2", new Student(60, "Surname2")
+        );
+        Map<String, Student> rsl = school.collectToMap(students);
+        assertEquals(rsl, expected);
+    }
+
+    @Test
+    public void whenListToMapWithDupl() {
+        List<Student> students = List.of(
+                new Student(10, "Surname1"),
+                new Student(10, "Surname1"),
+                new Student(30, "Surname3"),
+                new Student(40, "Surname4"),
+                new Student(60, "Surname2")
+        );
+        School school = new School();
+        Map<String, Student> expected =  Map.of(
+                "Surname1", new Student(10, "Surname1"),
+                "Surname3", new Student(30, "Surname3"),
+                "Surname4", new Student(40, "Surname4"),
+                "Surname2", new Student(60, "Surname2")
+        );
+        Map<String, Student> rsl = school.collectToMap(students);
+        assertEquals(rsl, expected);
     }
 }

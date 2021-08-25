@@ -2,6 +2,8 @@ package ru.job4j.stream;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -10,5 +12,16 @@ public class School {
         return   students.stream()
              .filter(predict)
              .collect(Collectors.toList());
+    }
+
+    public  Map<String, Student> collectToMap(List<Student> list) {
+
+       return list.stream()
+               .distinct()
+               .collect(
+               Collectors.toMap(
+                       student -> student.getSurName(),
+                       student -> student
+               ));
     }
 }
