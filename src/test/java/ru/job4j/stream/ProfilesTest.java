@@ -12,11 +12,14 @@ public class ProfilesTest {
     public void whenCollectSuccessful() {
         Profiles p = new Profiles();
         List<Profile> profile = List.of(
-                new Profile(new Address("New York", "17-th", 12, 23)),
-                new Profile(new Address("Paris", "Rue de Rivoli", 4, 3))
+                new Profile(new Address("New York", "19-th", 14, 73)),
+                new Profile(new Address("London", "Piccadilly", 4, 2)),
+                new Profile(new Address("Paris", "Rue de Rivoli", 4, 3)),
+                new Profile(new Address("New York", "19-th", 14, 73))
         );
         List<Address> expected = List.of(
-                new Address("New York", "17-th", 12, 23),
+                new Address("London", "Piccadilly", 4, 2),
+                new Address("New York", "19-th", 14, 73),
                 new Address("Paris", "Rue de Rivoli", 4, 3)
         );
          List<Address> rsl = p.collect(profile);
