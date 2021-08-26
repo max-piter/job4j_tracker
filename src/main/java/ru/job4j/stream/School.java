@@ -17,11 +17,11 @@ public class School {
     public  Map<String, Student> collectToMap(List<Student> list) {
 
        return list.stream()
-               .distinct()
                .collect(
                Collectors.toMap(
-                       student -> student.getSurName(),
-                       student -> student
+                       Student :: getSurName,
+                       student -> student,
+                       (oldKey, newKey) -> newKey
                ));
     }
 }
