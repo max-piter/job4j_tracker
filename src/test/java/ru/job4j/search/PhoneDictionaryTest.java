@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
 public class PhoneDictionaryTest {
     @Test
     public void whenFindByName() {
-        PhoneDictionary test = new PhoneDictionary();
+        var test = new PhoneDictionary();
         test.add(
                 new Person("Petr", "Arsentev", "534872", "Bryansk")
         );
@@ -22,7 +22,7 @@ public class PhoneDictionaryTest {
         test.add(
                 new Person("Max", "Petr", "345", "Moscow")
         );
-        ArrayList<Person> persons = test.find("Petr");
+        var persons = test.find("Petr");
         assertThat(persons.get(0).getSurname(), is("Arsentev"));
         assertThat(persons.get(1).getSurname(), is("Korov"));
         assertThat(persons.get(2).getSurname(), is("Petr"));
@@ -31,24 +31,24 @@ public class PhoneDictionaryTest {
 
     @Test
     public void whenFindNoName() {
-        PhoneDictionary test = new PhoneDictionary();
+        var test = new PhoneDictionary();
         test.add(
                 new Person("Petr", "Arsentev", "534872", "Bryansk")
         );
         test.add(
                 new Person("Max", "Petr", "345", "Moscow")
         );
-        ArrayList<Person> persons = test.find("Pier");
+       var persons = test.find("Pier");
         assertThat(persons.size(), is(0));
     }
 
     @Test
     public void whenFindByName1() {
-        PhoneDictionary phones = new PhoneDictionary();
+        var phones = new PhoneDictionary();
         phones.add(
                 new Person("Petr", "Arsentev", "534872", "Bryansk")
         );
-        ArrayList<Person> persons = phones.find("Petr");
+        var persons = phones.find("Petr");
         assertThat(persons.get(0).getSurname(), is("Arsentev"));
     }
 }

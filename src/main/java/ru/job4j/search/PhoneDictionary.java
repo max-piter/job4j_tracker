@@ -19,14 +19,14 @@ public class PhoneDictionary {
      * @return Список подощедщих пользователей.
      */
     public ArrayList<Person> find(String key) {
-        ArrayList<Person> result = new ArrayList<>();
+        var result = new ArrayList<Person>();
         Predicate<Person> compareName =  p -> p.getName().contains(key);
         Predicate<Person> compareSurname =  p -> p.getSurname().contains(key);
         Predicate<Person> comparePhone =  p -> p.getPhone().contains(key);
         Predicate<Person> compareAdress =  p -> p.getAddress().contains(key);
-        Predicate<Person> combine = compareName.or(compareSurname)
+        var combine = compareName.or(compareSurname)
                 .or(comparePhone).or(compareAdress);
-        for (Person person : persons) {
+        for (var person : persons) {
             if (combine.test(person)) {
                 result.add(person);
             }
