@@ -34,7 +34,9 @@ public class Student {
             return false;
         }
         Student student = (Student) o;
-        return name.equals(student.name) && account.equals(student.account) && group.equals(student.group);
+        return name.equals(student.name)
+                && account.equals(student.account)
+                && group.equals(student.group);
     }
 
     @Override
