@@ -34,6 +34,7 @@ public class Analyze {
                         Subject::getName, LinkedHashMap::new,
                        Collectors.averagingDouble(Subject::getScore)
                 ));
+
        return mapOfSubjects.entrySet().stream()
                 .map(s -> new Tuple(s.getKey(), s.getValue()))
                .collect(Collectors.toList());
