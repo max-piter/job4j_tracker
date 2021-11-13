@@ -31,6 +31,7 @@ public class Calculator {
         calculator.divide(10);
         calculator.sumAllOperation(10);
         result = Calculator.minus(10);
+        System.out.println(result);
         result = Calculator.multiply(10);
         System.out.println(result);
     }

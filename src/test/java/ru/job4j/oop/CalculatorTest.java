@@ -1,4 +1,5 @@
 package ru.job4j.oop;
+
 import org.junit.Assert;
 import org.junit.Test;
 
