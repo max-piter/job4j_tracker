@@ -16,15 +16,6 @@ public class JobSorter {
        System.out.println(jobs);
         Collections.sort(jobs);
       System.out.println(jobs);
-//        Collections.sort(jobs, new SortByNameJob());
-//        System.out.println(jobs);
-//
-//        Comparator<Job> comb = new JobDescByName()
-//                .thenComparing(new JobDescByPriority());
-//        Collections.sort(jobs, comb);
-//        Comparator<Job> combAsc = new JobAcsendName()
-//                .thenComparing(new JobAcsendPriotity());
-//        Collections.sort(jobs, combAsc);
 
     }
 }

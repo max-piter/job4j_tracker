@@ -6,14 +6,6 @@ public class ArProgression {
     public static int checkData(List<Integer> data) {
         int rsl = 0;
         boolean ifArProgr = true;
-//      ListIterator<Integer> arProgr = (ListIterator<Integer>) data.iterator();
-//        for (ListIterator<Integer> it = arProgr; it.hasNext();) {
-//            Integer el = it.next();
-//            if (el != (it.previous() + it.next()) / 2) {
-//                ifArProgr = false;
-//                break;
-//            }
-//        }
 
         for (int i = 1; i < data.size() - 1; i++) {
             if ((data.get(i - 1) + data.get(i + 1)) / 2 != data.get(i)) {

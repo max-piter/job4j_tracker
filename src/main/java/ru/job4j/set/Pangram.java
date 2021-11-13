@@ -8,9 +8,7 @@ public class Pangram {
         String[] alphabet = s.replaceAll(" ", "").split("");
         HashSet<String> alphaSet = new HashSet<>();
         alphaSet.addAll(Arrays.asList(alphabet));
-//       for (String el : alphabet) {
-//           alphaSet.add(el);
-//       }
+
         if (alphaSet.size() == 26) {
             rsl = true;
         }

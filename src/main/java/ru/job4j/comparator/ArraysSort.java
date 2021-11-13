@@ -4,7 +4,7 @@ import java.util.Collections;
 
 public class ArraysSort {
     public static long[] sort(long[] data) {
-        // метод  sort - это  void метод
+
         Arrays.sort(data);
 
         return data;

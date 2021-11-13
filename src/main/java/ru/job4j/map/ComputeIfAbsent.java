@@ -15,15 +15,6 @@ public class ComputeIfAbsent {
            names.computeIfAbsent(u.getId(), key -> u.getName());
        }
 
-//        for (int i = 0; i < users.size(); i++) {
-//            if (count > users.size()) {
-//                break;
-//            }
-//            int finalI = i;
-//            names.computeIfAbsent(count, key -> String.valueOf(users.get(finalI)));
-//            count++;
-//        }
-
         return names;
     }
 
@@ -81,10 +72,3 @@ public class ComputeIfAbsent {
 
     }
 }
-
-//for (int i = 0; i < users.size(); i++) {
-// count1
-//        int finalI = i;
-//        names.computeIfPresent(count1, (key, value) -> value + users.get(finalI));
-//        count1++;
-//        }

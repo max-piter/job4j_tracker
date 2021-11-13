@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static java.util.stream.Stream.*;
-
 public class TerminalForPrimitive {
     private int[] data;
 
@@ -90,16 +88,13 @@ public class TerminalForPrimitive {
     }
 
     public static int sum(int num) {
-//        int sum = 0;
-//        while (num != 0) {
-//            //Суммирование цифр числа
-//            sum += (num % 10);
-//            num /= 10;
-//        }
+
       return   Stream.of(num).map(el -> {
           int sum = 0;
           while (el != 0) {
-              //Суммирование цифр числа
+              /**
+               * summing of the date
+               */
               sum += (el % 10);
               el /= 10;
           }

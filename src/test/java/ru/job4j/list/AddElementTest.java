@@ -42,27 +42,6 @@ public class AddElementTest {
         assertThat(result, is(false));
     }
 
-//    @Before
-//    public void setUp() {
-//        list.add("one");
-//        list.add("two");
-//        list.add("three");
-//        list.add("four");
-//        list.add("five");
-//        list.add("six");
-//        list.add("seven");
-//        list.add("eight");
-//        list.add("nine");
-//    }
-
-//    @Test
-//    public void changePosition() {
-//        int index = 3;
-//        List<String> result = AddElement.changePosition(list, index);
-//        assertThat(result.size(), is(8));
-//        assertThat(result.get(index), is("nine"));
-//    }
-
     @Test
     public void changePositionNone() {
         int index = 20;

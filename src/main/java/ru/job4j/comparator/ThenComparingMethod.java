@@ -40,7 +40,10 @@ public class ThenComparingMethod {
             return Objects.hash(name, age);
         }
 
-        //пришлось обязательно переопределить метод  compareTo
+        /**
+         * пришлось обязательно переопределить метод  compareTo
+         */
+
         @Override
         public int compareTo(User o) {
             return this.name.compareTo(o.name);

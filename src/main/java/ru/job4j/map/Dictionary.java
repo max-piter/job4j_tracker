@@ -8,10 +8,9 @@ public class Dictionary {
         for (String string : strings) {
             String key = "" + string.charAt(0);
             if (!rsl.containsKey(key)) {
-                // привязыаем к ключу пустой список
                 rsl.put(key, new LinkedList<String>());
             }
-            // по этому ключу в список добавляем дополнительные строки, если понадобится
+
             rsl.get(key).add(string);
         }
         return rsl;
