@@ -13,7 +13,6 @@ public class CreateAction implements UserAction {
         return "Create";
     }
 
-
     @Override
     public boolean execute(Input input, Store tracker) {
         out.println("=== Create a new Item ====");
