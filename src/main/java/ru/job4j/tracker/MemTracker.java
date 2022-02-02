@@ -1,10 +1,9 @@
 package ru.job4j.tracker;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class Tracker {
+public class MemTracker implements  Store {
      private List<Item> items = new ArrayList<>();
      private int ids = 1;
 
@@ -12,6 +11,12 @@ public class Tracker {
         item.setId(ids++);
         items.add(item);
         return item;
+    }
+
+    public void init() {
+    }
+
+    public void close() {
     }
 
     public List<Item> findAll() {

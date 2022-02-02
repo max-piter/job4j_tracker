@@ -5,7 +5,7 @@ import java.util.List;
 public final class SingleTracker {
 
     private static SingleTracker instance = null;
-    private Tracker tracker = new Tracker();
+    private Store tracker = new MemTracker();
 
     /* реализовать singleton */
     private SingleTracker() {
@@ -22,7 +22,7 @@ public final class SingleTracker {
         return tracker.add(item);
     }
 
-    /* Остальные методы из класса Tracker. */
+    /* Остальные методы из класса MemTracker. */
 
     public List<Item> findAll() {
         return tracker.findAll();

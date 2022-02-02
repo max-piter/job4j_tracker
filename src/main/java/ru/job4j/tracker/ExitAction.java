@@ -14,7 +14,12 @@ public class ExitAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store tracker) {
+        try {
+            tracker.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
 }
