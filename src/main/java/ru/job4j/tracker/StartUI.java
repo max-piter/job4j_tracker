@@ -1,6 +1,5 @@
 package ru.job4j.tracker;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class StartUI {
@@ -51,18 +50,6 @@ public class StartUI {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-//        MemTracker memTracker = new MemTracker();
-//
-//        List<UserAction> actions = new ArrayList<>();
-//        actions.add(new CreateAction(output));
-//        actions.add(new ShowAllItems(output));
-//        actions.add(new EditItem(output));
-//        actions.add(new DeleteItem(output));
-//        actions.add(new FindItemByID(output));
-//        actions.add(new FindItemsByName(output));
-//        actions.add(new ExitAction(output));
-//        new StartUI(output).init(input, memTracker, actions);
     }
 
 }
