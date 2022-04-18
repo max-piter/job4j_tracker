@@ -18,18 +18,6 @@
 
     <profiles>
         <profile>
-            <id>test</id>
-            <properties>
-                <db.url>jdbc:h2:./testdb;MODE=PostgreSQL;CASE_INSENSITI﻿VE_IDENTIFIERS=TRUE;</db.url>
-                <db.username></db.username>
-                <db.password></db.password>
-                <db.driver>org.h2.Driver</db.driver>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
             <id>production</id>
             <properties>
                 <db.url>jdbc:postgresql://127.0.0.1:5432/tracker</db.url>
@@ -41,12 +29,6 @@
     </profiles>
 
     <dependencies>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>2.1.210</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -68,28 +50,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.liquibase</groupId>
-                <artifactId>liquibase-maven-plugin</artifactId>
-                <version>4.8.0</version>
-                <configuration>
-                    <changeLogFile>${basedir}/db/master.xml</changeLogFile>
-                    <url>${db.url}</url>
-                    <driver>${db.driver}</driver>
-                    <username>${db.username}</username>
-                    <password>${db.password}</password>
-                    <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>clearCheckSums</goal>
-                            <goal>update</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
