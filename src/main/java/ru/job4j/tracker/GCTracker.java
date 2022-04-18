@@ -10,7 +10,6 @@ public class GCTracker {
             mt.add(new Item("Item" + i));
         }
         finish = System.currentTimeMillis();
-
         System.out.printf("%nApp running time: %f%n%n", (finish - start) / 1000);
     }
 }
