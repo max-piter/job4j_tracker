@@ -1,0 +1,42 @@
+1) Запустил программу с параметрами VM options
+GC: -XX:+UseSerialGC -Xlog:gc*
+heap: -Xmx200m -Xms200m
+
+2)  Запустил jps для определения id:
+fyvas-MacBook-Pro:tracker a123$ jps
+55416
+67896 Jps
+67885 GCTracker
+67884 Launcher
+
+3) Замерил  время исполнения методов
+App addItem running time: 1,136000
+App deleteItem running time: 201,805000
+ метод удаления иполняется значительно дольше
+
+
+
+3) Запустил jmap -histo 67884 чтобы увидеть, как создаются/удаляются
+ 1_000_000 объектов Item при вызове методов:
+- addItem
+- deleteItem
+
+
+4) jstat -gc 67884 10s 10  посмотрел нагрузку на память
+5) jconsole
+Результат работы утилиты jconsole при добавлении 1_000_000 элементов:
+MAX CPU Usage = 6.2%
+heap memory used = 180mb
+Total classes loaded: 2239
+при увеличении количества добавленных  заявок до  10млн - выбрасывалось OutOfMemoryError: Java heap space
+
+Результат работы утилиты jconsole при удалении 1_000_000 элементов:
+MAX CPU Usage = 24.8%
+heap memory used = 198mb
+Total classes loaded: 2217
+Несколько раз счётчик heap выходил за пределы настроек: -Xmx200m -Xms200m и показывал 202.7мб,
+но исключение не выбрасывалось
+
+
+Вывод: больше всего ресурсов потребляется при удалении элементов
+
